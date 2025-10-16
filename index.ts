@@ -24,7 +24,8 @@ export default (filepathOrObject: string | OpenAPISpecObject): void => {
   const openApiSpec = openapiValidator.makeApiSpec(filepathOrObject);
 
   expect.extend({
-    toSatisfyApiSpec: (received: unknown): MatcherResult => jestToSatisfyApiSpec.default(received, openApiSpec) as MatcherResult,
+    toSatisfyApiSpec: (received: unknown): MatcherResult =>
+      jestToSatisfyApiSpec.default(received, openApiSpec) as MatcherResult,
     toSatisfySchemaInApiSpec: (received: unknown, schemaName: string): MatcherResult =>
       jestToSatisfySchemaInApiSpec.default(received, schemaName, openApiSpec) as MatcherResult
   });
