@@ -21,4 +21,9 @@ describe('Recreate bug (issue #XX)', () => {
   it('passes', () => {
     expect(res).toSatisfyApiSpec();
   });
+
+  it('toSatisfySchemaInApiSpec matcher works', () => {
+    const stringData = 'test string';
+    expect(stringData).toSatisfySchemaInApiSpec('StringSchema');
+  });
 });
